@@ -35,29 +35,37 @@
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Location"
-                    android:textSize="18sp"
+                    android:layout_marginTop="36dp"
+                    android:text="使用者名稱"
                     android:textColor="@color/darkblue"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imageView"
+                    app:layout_constraintHorizontal_bias="0.636"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/imageView" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="59dp"
+                    android:layout_height="59dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/bell_icon"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/bell_icon" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sakura"
+                    app:shapeAppearanceOverlay="@style/CircleImageViewStyle" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- 下拉式選單 (Spinner) -->
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp" />
+
 
             <!-- 搜索框 -->
             <androidx.constraintlayout.widget.ConstraintLayout

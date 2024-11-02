@@ -245,26 +245,6 @@ public class MainActivity extends BaseActivity {
     private void initLocation() {
         ArrayList<Location> list = new ArrayList<>();
 
-        locationRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    for (DataSnapshot issue : snapshot.getChildren()) {
-                        list.add(issue.getValue(Location.class));
-                    }
-                    ArrayAdapter<Location> adapter = new ArrayAdapter<>(MainActivity.this, R.layout.sp_item, list);
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    binding.spinner.setAdapter(adapter);
-                } else {
-                    showError("No locations found.");
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                handleError(error);
-            }
-        });
     }
 
     // RecyclerView 設置
