@@ -28,14 +28,14 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     buildFeatures {
-        viewBinding true
+        viewBinding = true // 修正語法
     }
 }
 
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.firebase:firebase-database:21.0.0'
     implementation 'com.google.firebase:firebase-auth:23.0.0'
@@ -47,4 +47,7 @@ dependencies {
 
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+
 }
