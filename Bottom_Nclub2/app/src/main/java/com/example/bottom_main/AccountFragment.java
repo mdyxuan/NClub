@@ -59,6 +59,7 @@ public class AccountFragment extends Fragment {
 
         initEditProfileActivityFunctionality(); // 初始化個人資料功能
         initFriendActivityFunctionality(); // 初始化好友列表功能
+        initFollowActivityFunctionality(); // 初始化關注列表功能
         initLogoutFunctionality(); // 初始化登出功能
 
         return view;
@@ -96,6 +97,18 @@ public class AccountFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent); // 跳轉至 LoginActivity
+            }
+        });
+    }
+    //關注功能的初始化
+    private void initFollowActivityFunctionality() {
+        // 設定通知按鈕的點擊事件
+        ImageView follow = binding.imageView9; // 假設你在布局中有一個 ID 為 imageView 的 ImageView
+        follow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), FollowActivity.class);
+                startActivity(intent); // 跳轉至 FollowActivity
             }
         });
     }

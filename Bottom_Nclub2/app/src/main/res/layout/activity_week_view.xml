@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment">
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,17 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeFragment">
+    tools:context=".WeekViewActivity">
 
     <Button
-        android:id="@+id/Weekbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="週"
+        android:text="天"
         android:textColor="@color/white"
         android:background="@null"
         android:textStyle="bold"
+        android:onClick="dailyAction"
         android:textSize="20sp"/>
 
     <LinearLayout
@@ -33,15 +27,15 @@
         android:layout_marginTop="20dp">
 
         <Button
-            android:id="@+id/PreviousMonthbtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@null"
             android:text="@string/back"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:background="@null"
+            android:textStyle="bold"
+            android:onClick="previousWeekAction"
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/monthYearTV"
@@ -54,7 +48,6 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/NextMonthbtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -62,6 +55,7 @@
             android:textColor="@color/white"
             android:background="@null"
             android:textStyle="bold"
+            android:onClick="nextWeekAction"
             android:textSize="20sp"/>
 
     </LinearLayout>
@@ -134,12 +128,32 @@
             android:textAlignment="center"
             android:textSize="16sp"/>
 
+
     </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="新增"
+        android:textColor="@color/white"
+        android:background="@null"
+        android:textStyle="bold"
+        android:onClick="newEventAction"
+        android:layout_gravity="center"
+        android:textSize="20sp"/>
+
+    <ListView
+        android:id="@+id/eventListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"/>
+
 
 </LinearLayout>
-</FrameLayout>
